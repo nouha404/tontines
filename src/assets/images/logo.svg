@@ -1,0 +1,102 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Premium blue gradient background -->
+    <linearGradient id="bgMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1470E6"/>
+      <stop offset="50%" style="stop-color:#0055CC"/>
+      <stop offset="100%" style="stop-color:#003D99"/>
+    </linearGradient>
+    
+    <!-- Ring gradient with depth -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF"/>
+      <stop offset="40%" style="stop-color:#F0F6FF"/>
+      <stop offset="100%" style="stop-color:#D0E0F5"/>
+    </linearGradient>
+    
+    <!-- Ring inner shadow effect -->
+    <linearGradient id="ringInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8D4F5"/>
+      <stop offset="100%" style="stop-color:#E8F0FF"/>
+    </linearGradient>
+    
+    <!-- Premium gold gradient -->
+    <radialGradient id="goldCenter" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#FFE999"/>
+      <stop offset="40%" style="stop-color:#FFD700"/>
+      <stop offset="70%" style="stop-color:#F5C400"/>
+      <stop offset="100%" style="stop-color:#D4A000"/>
+    </radialGradient>
+    
+    <!-- Gold rim highlight -->
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF5CC"/>
+      <stop offset="50%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    
+    <!-- Soft drop shadow -->
+    <filter id="dropShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#001A4D" flood-opacity="0.28"/>
+    </filter>
+    
+    <!-- Subtle inner glow for gold -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="url(#bgMain)"/>
+  
+  <!-- Subtle background circles for depth -->
+  <g opacity="0.04">
+    <circle cx="512" cy="512" r="460" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+    <circle cx="512" cy="512" r="420" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+    <circle cx="512" cy="512" r="380" fill="none" stroke="#FFFFFF" stroke-width="1"/>
+  </g>
+  
+  <!-- All elements in a group, shifted up by 33px to center visually -->
+  <g transform="translate(0, -33)">
+    
+    <!-- Three interlocking rings -->
+    <g filter="url(#dropShadow)">
+      
+      <!-- Ring 1 - Top -->
+      <circle cx="512" cy="378" r="150" fill="none" stroke="url(#ringInner)" stroke-width="54"/>
+      <circle cx="512" cy="378" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="46"/>
+      
+      <!-- Ring 2 - Bottom Left -->
+      <circle cx="396" cy="579" r="150" fill="none" stroke="url(#ringInner)" stroke-width="54"/>
+      <circle cx="396" cy="579" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="46"/>
+      
+      <!-- Ring 3 - Bottom Right -->
+      <circle cx="628" cy="579" r="150" fill="none" stroke="url(#ringInner)" stroke-width="54"/>
+      <circle cx="628" cy="579" r="150" fill="none" stroke="url(#ringGrad)" stroke-width="46"/>
+      
+    </g>
+    
+    <!-- Central golden coin element -->
+    <g filter="url(#goldGlow)">
+      <!-- Outer gold ring for depth -->
+      <circle cx="512" cy="512" r="90" fill="url(#goldRim)"/>
+      
+      <!-- Main gold center -->
+      <circle cx="512" cy="512" r="80" fill="url(#goldCenter)"/>
+      
+      <!-- Inner detail ring -->
+      <circle cx="512" cy="512" r="55" fill="none" stroke="#C9A000" stroke-width="2" opacity="0.35"/>
+      
+      <!-- Highlight/shine -->
+      <ellipse cx="490" cy="490" rx="26" ry="13" fill="#FFFFFF" opacity="0.55" transform="rotate(-30 490 490)"/>
+      
+      <!-- Secondary subtle shine -->
+      <ellipse cx="535" cy="535" rx="10" ry="5" fill="#FFFFFF" opacity="0.2" transform="rotate(-30 535 535)"/>
+    </g>
+    
+  </g>
+</svg>
